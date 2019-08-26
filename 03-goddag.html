@@ -9,12 +9,19 @@
 
 <body>
 
-    Skriv dit navn her
-    <input type="text" id="name">
+    <p>Skriv dit navn her</p>
+    <input type="text" id="navn">
     <button type="button">klik her</button>
 
     <script>
-        document.querySelector("#name").value
+        document.querySelector("button").addEventListener("click", button_clicked);
+
+        function button_clicked() {
+            let brugernavn = document.querySelector("#navn").value;
+            console.log(`Yo! ${brugernavn}`)
+
+
+        }
     </script>
 
 
