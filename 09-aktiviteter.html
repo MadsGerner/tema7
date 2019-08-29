@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        img {
+            width: 100%
+        }
+
+        .modtager {
+            display: grid;
+            grid-row-gap: 20px;
+            grid-column: 20px;
+
+        }
+
+        .style {
+            background-color: white;
+        }
+
+
+
+        @media screen and (min-width:500px) {
+            .modtager {
+                grid-template-columns: repeat(1, 1fr);
+                max-width: 500px;
+
+            }
+        }
+
+        @media screen and (min-width:770px) {
+            .modtager {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 960px;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width:1440px) {
+            .modtager {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <section class="modtager">
+        <template>
+            <article class="style">
+                <h1></h1>
+                <img src="" alt="">
+                <p></p>
+                <p></p>
+            </article>
+        </template>
+    </section>
+
+    <script>
+        let roskildeArray = [
+
+            {
+                "navn": "Ældre er overrepræsenteret i cyklistulykker",
+                "dato": "23. august 2019",
+                "billed": "https://dit-holbaek.dk/wp-content/uploads/2019/08/Cykelulykker-300x200.jpg",
+                "brødtekst": "Når man har passeret pensionsalderen, er der rig mulighed for at leve et aktivt liv, hvilket mange seniorer heldigvis gør. Men desværre viser ulykkestallene, at alt for mange personer over 65 år også kommer til skade, når de bevæger sig rundt på cykel"
+            },
+
+            {
+                "navn": "Oprydning efter skybrud kan være farligt",
+                "dato": "23. august 2019",
+                "billed": "https://dit-roskilde.dk/wp-content/uploads/2019/08/abw-regnvejr-paraply-200x150.jpg",
+                "brødtekst": "Når vandet fosser ind i boligen eller virksomheden som følge af et skybrud, har de fleste mennesker kun én tanke i hovedet: at redde, hvad der reddes kan, og få det indtrængende vand stoppet i en pokkers fart."
+            },
+
+            {
+                "navn": "Roskilde Byløb 2019",
+                "dato": "22. august 2019",
+                "billed": "https://dit-roskilde.dk/wp-content/uploads/2019/08/Roskilde-Byl%C3%B8b-b%C3%B8rn-august-2019-abw-7-200x150.jpg",
+                "brødtekst": "Børneløbet blev skudt i gang kl. 18.00 og der var fart på de små ben! Dit Roskilde var et hurtigt smut forbi."
+            },
+            {
+                "navn": "H.K.H. Kronprinsen åbner Naturens Dag 2019",
+                "dato": "22. august 2019",
+                "billed": "https://dit-roskilde.dk/wp-content/uploads/2019/08/kronprinsen2010_Territorium-200x150.jpg",
+                "brødtekst": "5. klasse fra Bramsnæsvigskolen får sved på panden, når de sammen med Hans Kongelige Højhed Kronprinsen skyder Naturens Dag i gang i det betagende landskab i Ejby Ådal ved Roskilde."
+            },
+
+            {
+                "navn": "Skandinavisk Lego finale kommer til Roskilde",
+                "dato": "22. august 2019",
+                "billed": "https://dit-roskilde.dk/wp-content/uploads/2019/08/Lego_robot-200x150.jpg",
+                "brødtekst": "Skoleelever fra Danmark, Norge og Sverige dyster hvert år i november i den skandinaviske finale i First Lego League – verdens største teknologi- og projektturnering for 10-16 årige. Og i år kommer det til at foregå i Roskilde Kongrescenter Bauhaus Arena."
+            },
+        ]
+
+        const modtagerKloner = document.querySelector(".modtager");
+        const temp = document.querySelector("template");
+
+
+
+        roskildeArray.forEach(ros => {
+            const klon = temp.cloneNode(true).content;
+            klon.querySelector("h1").textContent = ros.navn;
+            klon.querySelector("p").textContent = ros.dato;
+            klon.querySelector("p + p").textContent = ros.brødtekst;
+            klon.querySelector("img").src = ros.billed;
+            modtagerKloner.appendChild(klon);
+
+
+        })
+    </script>
+</body></html>
