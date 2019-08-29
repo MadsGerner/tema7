@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <article></article>
+    <h3></h3>
+    <img src="" alt="">
+    <p></p>
+    <p></p>
+
+    <script>
+        let dyrArray = [
+
+            {
+                "navn": "Gris",
+                "type": "Pattedyr",
+                "billed": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            },
+
+            {
+                "navn": "Frø",
+                "type": "Frødyr",
+                "billed": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "frøfarme"
+            },
+
+            {
+                "navn": "ræv",
+                "type": "rævdyr",
+                "billed": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "rævfarme"
+            }, {
+                "navn": "sild",
+                "type": "silddyr",
+                "billed": "ttp://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "sildfarme"
+            },
+
+            {
+                "navn": "krokodille",
+                "type": "krokodilledyr",
+                "billed": "ttp://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "krokodillefarme"
+            },
+        ]
+
+
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log(dyrArray)
+            dyrArray.forEach(dyr => {
+
+                document.querySelector("article").innerHTML += `<p>navn: ${dyr.navn} type: ${dyr.type} levested: ${dyr.levested}</p>`
+
+            })
+        }
+    </script>
+</body></html>
