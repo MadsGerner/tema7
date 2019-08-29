@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-oevelse-1</title>
+    <style>
+        body {
+            color: burlywood;
+        }
+
+        #display {
+            width: 20vw;
+            height: 20vw;
+            border: 1px solid silver;
+            margin: 7vw;
+            padding: 1vw;
+        }
+
+        /*********************/
+
+    </style>
+
+</head>
+
+<body>
+    <div id="display"></div>
+
+    <script>
+        let playliste = ["DJ Aligator 1", "DJ Aligator 2", "DJ Aligator 3", "DJ Aligator 4", "DJ Aligator 5", "DJ Aligator 6", "DJ Aligator 7", "DJ Aligator 8", "DJ Aligator 9", "DJ Aligator 10"];
+        playliste.forEach(sang => {
+            document.querySelector("#display").innerHTML += `${sang} <br>`;
+
+        })
+
+    </script>
+</body>
+
+</html>
