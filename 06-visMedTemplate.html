@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="modtager">
+        <template>
+            <article></article>
+            <h1></h1>
+            <img src="" alt="">
+            <p></p>
+            <p></p>
+        </template>
+    </section>
+
+    <script>
+        let dyrArray = [
+
+            {
+                "navn": "Gris",
+                "type": "Pattedyr",
+                "billed": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            },
+
+            {
+                "navn": "Frø",
+                "type": "Frødyr",
+                "billed": "http://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "frøfarme"
+            },
+
+            {
+                "navn": "ræv",
+                "type": "rævdyr",
+                "billed": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "rævfarme"
+            }, {
+                "navn": "sild",
+                "type": "silddyr",
+                "billed": "http://mabe-kea.dk/E19/pics/sild.jpg",
+                "levested": "sildfarme"
+            },
+
+            {
+                "navn": "krokodille",
+                "type": "krokodilledyr",
+                "billed": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+                "levested": "krokodillefarme"
+            },
+        ]
+
+        const modtagerKloner = document.querySelector(".modtager");
+        const temp = document.querySelector("template");
+
+
+
+        dyrArray.forEach(dyr => {
+            const klon = temp.cloneNode(true).content;
+            klon.querySelector("h1").textContent = dyr.navn;
+            klon.querySelector("p").textContent = dyr.type;
+            klon.querySelector("p + p").textContent = dyr.levested;
+            klon.querySelector("img").src = dyr.billed;
+            modtagerKloner.appendChild(klon);
+
+
+        })
+    </script>
+</body></html>
